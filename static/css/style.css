@@ -1,0 +1,206 @@
+body {
+  box-sizing: border-box;
+  background: url("img/canvas.jpg");
+  background-repeat: no-repeat;
+width: 100%;
+height:100%;
+
+text-align:center;
+margin:auto;
+padding:0;
+
+}
+
+header {
+  height: 100px;
+
+  color: white;
+  opacity: 40%;
+  font-size: 20px;
+
+
+}
+#post_container {
+	float: left;
+	width: 75%;
+}
+#messages {
+	float: right;
+	height: 800px;
+	width: 25%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	opacity: 80%;
+	color: white;
+
+}
+#posts {
+	float: right;
+	height: 800px;
+	width: 66.67%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	opacity: 80%;
+	color: black;
+
+}
+#form-group {
+	padding-top: 300px;
+	padding-left: 10px;
+}
+#new_post, #search_mentor {
+	position: static;
+	float: left;
+	height: 800px;
+	width: 33.33%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	opacity: 80%;
+	color: white;
+
+}
+#morin {
+	float: left;
+	height: 500px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	opacity: 80%;
+	color: white;
+
+}
+
+#merin {
+	float: right;
+	height: 500px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	opacity: 80%;
+	color: white;
+
+}
+
+
+#form1 {
+	float: right;
+	height: 500px;
+
+	width: 55%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	opacity: 80%;
+	color: white;
+}
+#form2 {
+	float: right;
+	height: 500px;
+	width: 55%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	opacity: 80%;
+	color: white;
+}
+#quote {
+	float: right;
+	height: 500px;
+	width: 55%;
+	margin-left: auto;
+	margin-right: auto;
+
+
+	color: black;
+}
+#register {
+	float: left;
+	height: 500px;
+	width: 45%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	opacity: 80%;
+	color: white;
+
+}
+img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  opacity: 2;
+  transition: transform .4s;
+}
+img:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+#head1 {
+	float: left;
+}
+#head2 {
+	float: right;
+	padding-right: 30px;
+}
+
+#head1:hover,#head2:hover {
+	cursor: pointer;
+}
+
+footer {
+	clear: both;
+	height: 100px;
+	background-color: black;
+	color: white;
+
+
+	padding-top: 20px;
+	opacity: 90%;
+}
+
+
+input[type=text], input[type=password] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+select {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 80%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+
+
