@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+	<script>
+        
+    </script>
+	
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between" >
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">guruKGP   |    Hi, {{ user.name }}!</a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Messages</a>
+    </li>
+   <form class="form-inline">
+    <input id="res" class="form-control mr-sm-2" type="search" placeholder="Search mentor" aria-label="Search" name="name">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+  </ul>
+</nav>
+
+
+
+
+
+
+	<div id = "post_container">
+		<div id="mentor_search" style="display: none">
+
+		</div>	
+
+		<div id = "new_post" style="display: block;">
+			<form action='/savepost' method="post">
+				
+				
+				<div class="form-group col-auto">
+				<input type="text" name="desc" class="form-control" placeholder="Description" required>
+    			</div>
+				<div class="form-group col-auto">
+
+  		<label for="exampleFormControlTextarea3">Write Post</label>
+  		<textarea class="form-control" id="exampleFormControlTextarea3" rows="15" placeholder="write something here..." name="postcontent"></textarea>
+		</div>
+			<div align="center">
+     			 <button type="submit" class="btn btn-primary">Post</button>
+    		</div>
+				
+			</form>
+			
+		</div>
+		
+		<div id = "posts" style="display: block;">
+			{% for post in feed %}
+			<div id = "namedate">
+				<h2>Posted by : <b>{{post.name}}</b> on <b>{{post.date}}</b></h2>
+			</div>
+			<br>
+
+			<div id = "describe">
+				<p><b>About : {{post.desc}}</b></p>
+				
+			</div>
+			<br>
+			<div id = "feedcontent">
+				<p>{{post.comtent}}</p>
+				
+			</div>
+			{% endfor %}
+			
+		</div>
+			
+
+	</div>
+
+	<div id = "messages" style="display: block;">
+		
+	</div>
+
+
+</body>
+</html>
