@@ -1,0 +1,322 @@
+body {
+  box-sizing: border-box;
+  background-color: #a3470a;
+  background-repeat: no-repeat;
+width: 100%;
+height:100%;
+
+text-align:center;
+margin:auto;
+padding:0;
+
+}
+#overlayer {
+  width:100%;
+  height:100%;  
+  position:absolute;
+  z-index:1;
+  background:#4a4a4a;
+}
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  z-index:3;
+  border: 4px solid #Fff;
+  top: 50%;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  25% {
+    transform: rotate(180deg);
+  }
+  
+  50% {
+    transform: rotate(180deg);
+  }
+  
+  75% {
+    transform: rotate(360deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  
+  25% {
+    height: 0%;
+  }
+  
+  50% {
+    height: 100%;
+  }
+  
+  75% {
+    height: 100%;
+  }
+  
+  100% {
+    height: 0%;
+  }
+}
+header {
+  height: 100px;
+
+  color: white;
+  opacity: 40%;
+  font-size: 20px;
+  
+
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+header {
+  height: 100px;
+
+  color: white;
+  opacity: 40%;
+  font-size: 20px;
+  
+
+}
+
+#post_container {
+	float: left;
+	width: 75%;
+}
+#messages {
+	float: right;
+	
+	width: 25%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #a3470a;
+	
+	color: white;
+	
+
+}
+#new_post.sticky {
+	position: -webkit-sticky;
+ 	 position: sticky;
+ 	 top: 3em;
+
+}
+#messages.sticky 
+{
+	position: -webkit-sticky;
+ 	 position: sticky;
+ 	 top: 3em;
+
+}
+
+#posts {
+	float: right;
+	border-style: solid;
+  	border-color: black;
+	height: auto;
+	width: 66.67%;
+	word-wrap: break-word;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	opacity: 80%;
+	color: black;
+
+
+}
+#form-group {
+	padding-top: 300px;
+	padding-left: 10px;
+}
+#new_post, #search_mentor {
+		float: left;
+	height: 545px;
+	width: 33.33%;
+	margin-left: auto;
+	margin-right: auto;
+	
+	opacity: 1;
+	color: white;
+	background-image: url("img/canvas.jpg");
+	
+
+}
+
+#morin {
+	float: left;
+	height: 500px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	opacity: 80%;
+	color: white;
+
+}
+
+#merin {
+	float: right;
+	height: 500px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	opacity: 80%;
+	color: white;
+
+}
+
+
+#form1 {
+	float: right;
+	height: 500px;
+
+	width: 55%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	opacity: 80%;
+	color: white;
+}
+#form2 {
+	float: right;
+	height: 500px;
+	width: 55%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	opacity: 80%;
+	color: white;
+}
+#quote {
+	float: right;
+	height: 500px;
+	width: 55%;
+	margin-left: auto;
+	margin-right: auto;
+
+
+	color: black;
+}
+#register {
+	float: left;
+	height: 500px;
+	width: 45%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	opacity: 80%;
+	color: white;
+
+}
+img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  opacity: 2;
+  transition: transform .4s;
+}
+img:hover {
+
+  transform: scale(1.2);
+  cursor: pointer;
+}
+#head1 {
+	float: left;
+}
+#head2 {
+	float: right;
+	padding-right: 30px;
+}
+
+#head1:hover,#head2:hover {
+	cursor: pointer;
+}
+
+footer {
+	clear: both;
+	height: 100px;
+	background-color: black;
+	color: white;
+
+
+	padding-top: 20px;
+	opacity: 90%;
+}
+
+
+input[type=text], input[type=password] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+select {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 80%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+
+
