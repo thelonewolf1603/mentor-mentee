@@ -4,14 +4,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>dashboard</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}"/>
 </head>
 <body>
-	<script>
-        
-    </script>
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	<SCRIPT>
+		var mybutton = document.getElementById("myBtn");
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+function ShowAndHide1() {
+  //sleep(2);
+    var x = document.getElementById('form1');
+    var y = document.getElementById('form2');
+    var z = document.getElementById('quote');
+    if(z.style.display=='block')
+    {
+      z.style.display='none';
+      x.style.display='block';
+    }
+    else
+    {
+      y.style.display='none';
+      x.style.display='block';
+    }
+
+
+
+    }
+
+function ShowAndHide2() {
+  //sleep(2);
+    var x = document.getElementById('form1');
+    var y = document.getElementById('form2');
+    var z = document.getElementById('quote');
+      if(z.style.display=='block')
+    {
+      z.style.display='none';
+      y.style.display='block';
+    }
+    else
+    {
+      x.style.display='none';
+      y.style.display='block';
+    }
+
+}
+function search() {
+	var x =document.getElementById('formsearch');
+	var name = x.elements[0].value;
+	document.getElementById('messages').innerHTML += "hello";
+}
+
+</SCRIPT>
 	
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between" >
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between sticky fixed-top" >
   <!-- Brand/logo -->
   <a class="navbar-brand" href="#">guruKGP   |    Hi, {{ user.name }}!</a>
   
@@ -26,12 +87,14 @@
     <li class="nav-item">
       <a class="nav-link" href="#">Messages</a>
     </li>
-   <form class="form-inline">
+   <form class="form-inline" id="formsearch" {% if flag==1 %} action="search_mentor_mentor" {% else %} action="search_mentor_mentee" {% endif %}>
     <input id="res" class="form-control mr-sm-2" type="search" placeholder="Search mentor" aria-label="Search" name="name">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="btnroll" value="{{user.roll}}">Search
+    </button>
   </form>
+ 
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="url_for(index.html)">Logout</button>
 
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
   </ul>
 </nav>
 
@@ -42,55 +105,91 @@
 
 	<div id = "post_container">
 		<div id="mentor_search" style="display: none">
+			
 
 		</div>	
 
-		<div id = "new_post" style="display: block;">
+		<div id = "new_post" style="display: block;" class="sticky">
 			<form action='/savepost' method="post">
+				 <div>
+
+
+      			
 				
-				
+				</div>
 				<div class="form-group col-auto">
-				<input type="text" name="desc" class="form-control" placeholder="Description" required>
+					<input type="text" name="desc" class="form-control" placeholder="Description" required>
     			</div>
 				<div class="form-group col-auto">
 
-  		<label for="exampleFormControlTextarea3">Write Post</label>
-  		<textarea class="form-control" id="exampleFormControlTextarea3" rows="15" placeholder="write something here..." name="postcontent"></textarea>
-		</div>
-			<div align="center">
-     			 <button type="submit" class="btn btn-primary">Post</button>
-    		</div>
+  				<label for="exampleFormControlTextarea3">Write Post</label>
+  					<textarea class="form-control" id="exampleFormControlTextarea3" rows="15" placeholder="write something here..." name="postcontent" required></textarea>
+				</div>
+				<div align="center">
+     			 	<button type="submit" class="btn btn-primary" value="{{user.roll}}" name = "rolle">Post</button>
+    			</div>
 				
 			</form>
 			
 		</div>
 		
-		<div id = "posts" style="display: block;">
-			{% for post in feed %}
-			<div id = "namedate">
-				<h2>Posted by : <b>{{post.name}}</b> on <b>{{post.date}}</b></h2>
-			</div>
 			<br>
+			<br>
+			
+		{% for post in feed %}
+		
+		<div id = "posts" style="display: block;">
+			
+			<div id = "namedate">
+				<br>
+				
+				
+			</div>
+	
 
 			<div id = "describe">
-				<p><b>About : {{post.desc}}</b></p>
+				<p align="middle"><b>About</b> : <h3>{{post.desc}}</h3></p>
 				
 			</div>
+			{% if post.name==user.name %}
+				<div align="right">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit" right-margin="5px">edit</button>
+				</div>
+				{% endif %}
 			<br>
 			<div id = "feedcontent">
-				<p>{{post.comtent}}</p>
+				{{post.content}}
 				
 			</div>
-			{% endfor %}
+			<div background-color = blue align="right">
+				Posted by : <b>{{post.name}}
+				
+
+				</b> on <b>{{post.date}}</b>
+				</div>
+			
 			
 		</div>
+		{% endfor %}
 			
 
 	</div>
 
-	<div id = "messages" style="display: block;">
+	<div id = "messages" style="display: block;" class="sticky list-group">
+		<br>
+ 		<br>
+		<h3><b>list of mentors</b></h3>
+  		
+
+		{% for men in mentors %}
+			<div align="left">
+			<a href="#" class="list-group-item list-group-item-action list-group-item-success"><b>{{men.name}}</b> year : <b>{{men.year}}</b> dept : <b>{{men.dept}}</b></a>
+			</div>
+		{% endfor %}	
+		</div>
 		
 	</div>
+		}
 
 
 </body>
